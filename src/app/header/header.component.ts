@@ -6,4 +6,6 @@ import { Component } from '@angular/core'
   template: './header.componet.html'
 })
 
-export class HeaderComponent {}
+export class HeaderComponent {
+
+}

@@ -1,0 +1,7 @@
+<h1 *ngFor='let post of posts'>
+  <div *ngIf='post.length > 0'>
+    {{post.title}}
+    {{post.content}}
+    <p *ngIf='posts.length <= 0'>No posts added</p>
+  </div>
+</h1>
