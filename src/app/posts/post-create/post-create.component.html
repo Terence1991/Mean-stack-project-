@@ -1,5 +1,8 @@
-<input type='text' [(ngModel)]='enteredTitle'>
+<form (submit)='onAddPost(postForm)' #postForm='ngForm'>
+  <input type='text' name='title' ngModel>
 
-<textarea rows="6" [(ngModel)]="enteredContent"></textarea>
-<hr>
-<button (click)='onAddPost()'>Save Post</button>
+    <textarea rows="6"></textarea>
+    <hr>
+    <button (click)='onAddPost()'>Save Post</button>
+</form>
+
