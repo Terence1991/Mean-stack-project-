@@ -1,7 +1,8 @@
 <form (submit)='onAddPost(postForm)' #postForm='ngForm'>
-  <input type='text' name='title' ngModel>
+  <input type='text' name='title' ngModel required minlength="3" #title="ngModel">
+  <p ngIf="title.inval">please enter a post title</p>
 
-    <textarea rows="6"></textarea>
+  <textarea rows="6" name='conent' ngModel required #content='ngModel'></textarea>
     <hr>
     <button (click)='onAddPost()'>Save Post</button>
 </form>
