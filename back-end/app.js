@@ -3,14 +3,24 @@ const express = require('express')
 
 const app = express()
 
-app.use((req, res, next) => {
-  console.log('first middle ware')
+app.use('/posts',(req, res, next) => {
+  const posts = [
+  {
+    id: 13123234,
+    title: " bing",
+    content: "ding"
+  },
+  {
+    id: 1343443,
+    title: 'bing',
+    contnet: 'bleh'
+  }
+]
 
-})
-
-
-app.use((req, res, next) => {
-  res.send('helo from express ')
+  return res.status(200).json({
+    message: 'posts sent sucsefully',
+    posts: posts
+  })
 })
 
 module.exports = app;
