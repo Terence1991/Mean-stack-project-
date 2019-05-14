@@ -1,6 +1,8 @@
 const express = require('express')
-
+const bodyParser = require('body-parser')
 const app = express()
+
+app.use(bodyParser.json())
 
 app.use((req, res, next) => {
   res.setHeader('Acsess-Control-Allow-Origin', '*')
@@ -8,8 +10,20 @@ app.use((req, res, next) => {
     'Acsess-Control-Allow-Header',
     'Origin, X-Requested-With, Content-Type, Accsept'
   )
-  res.setHeader('Acsess-Control-Alloq', 'GET , POST, PATCH, DELETE, OPTIONS')
+  res.setHeader(
+
+  'Acsess-Control-Alloq',
+  'GET , POST, PATCH, DELETE, OPTIONS'
+  )
   next()
+})
+
+app.get('/post',(req, res, next) => {
+    const post = req.body;
+    console.log(post)
+    res.status(201).json({
+      messages: "post added sucsesfully"
+    })
 })
 
 
