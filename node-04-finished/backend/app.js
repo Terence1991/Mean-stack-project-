@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://Terry:gsppwns117@cluster0-siito.mongodb.net/test
     console.log('connected to database')
   })
   .catch(() => {
-    console.log('connextion failed')
+    console.log('connecion failed')
   })
 
 app.use(bodyParser.json());
@@ -33,7 +33,7 @@ app.post("/api/posts", (req, res, next) => {
     title: req.body.title,
     content: req.body.content
   })
-  console.log(post);
+  post.save()
   res.status(201).json({
     message: 'Post added successfully'
   });
